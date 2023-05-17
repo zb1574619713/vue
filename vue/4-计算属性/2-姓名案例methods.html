@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值案例</title>
+</head>
+<body>
+    <script src="../../js/vue.js"></script>
+    <div class="root">
+        <h2>欢迎光临</h2>
+        <input type="text" name="" id="" class="firstname" v-model="firstname">
+        <input type="text" name="" id="" class="lastname" v-model="lastname">
+        <p>{{fullname()}}</p>
+        <button>点我</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'.root',
+            data:{
+                firstname:'陈',
+                lastname:'灿灿'
+            },
+            methods:{
+                fullname(){
+                    //复杂要求对其处理但是每次更改vue值就会重新渲染页面 且调用函数，费cpu
+                    return this,firstname+'-'+this.lastname
+                }
+            }
+        })
+    </script>
+</body>
+</html>

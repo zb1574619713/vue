@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../../js/vue.js"></script>
+    <div id="box">
+    <p> how {{name}} is you</p>
+    <input type="text" v-model="name">
+    <button v-on:click = 'change'>按我</button>
+    <!-- v-on ====> @ -->
+    <button @click = 'change2'>按我呀</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el:box,
+            data:{
+                name:'金霞'
+            },
+            methods:{
+                change(){
+                    alert(this.name)
+                },
+                change2(){
+                    alert(this.name+'I love you')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

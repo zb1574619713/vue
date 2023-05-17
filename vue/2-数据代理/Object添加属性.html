@@ -1,0 +1,24 @@
+<script>
+    let number = 15
+    const Obj = {
+        name:'张三',
+        price:200
+    }
+    Object.defineProperty(Obj,'age',{
+        // value:number,
+        // enumerable:true,
+        // configurable:true,
+        // writable:true
+        get:function(){
+            return number
+            //每次访问这个属性就会调用getter 返回值作为其属性值
+            //实现变量 与该对象属性 绑定
+        },
+        set:(value)=>{
+            number = value
+            //当用户修改属性时候 调用setter 参数为用户所要修改值
+            //虽然用户修改属性，当时访问该属性时，又会调用getter(),使变量 复制给该属性，所以要真正修改属性，应该要修改其变量，也是是====> 变量 = value
+        }
+    })
+    console.log(Obj)
+</script>

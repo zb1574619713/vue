@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script src="../../js/vue.js"></script>
+    <p class="p">my name is {{name}}</p>
+    <script>
+        let vm = new Vue({
+            el :'.p',
+            data:{
+                name:'金霞',
+                age:18
+            }
+        })
+        console.log(vm)
+        //数据代理作用
+        //1. 将配置对象的data对象 copy 一份 存为Vue实例对象的_data属性
+        //2.利用Object.defineproperty()静态方法 为 Vue实例对象添加_data 对应的属性和方法
+    </script>
+</body>
+</html>
